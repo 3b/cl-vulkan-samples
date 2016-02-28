@@ -3,4 +3,5 @@
   (:export
    #:instance
    #:enumerate
-   #:enumerate-adv))
+   #:enumerate-adv
+   #:device))
