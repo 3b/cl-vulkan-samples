@@ -1,4 +1,6 @@
 (defpackage cl-vulkan-samples
   (:use :cl)
   (:export
-   #:instance))
+   #:instance
+   #:enumerate
+   #:enumerate-adv))
