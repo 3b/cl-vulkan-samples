@@ -7,4 +7,6 @@
   :components ((:file "package")
                (:file "instance")
                (:file "enumerate")
+               (:file "instance-layer-properties")
+               (:file "instance-extension-properties")
                (:file "device")))

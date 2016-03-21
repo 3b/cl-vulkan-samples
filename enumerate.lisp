@@ -12,10 +12,8 @@
             for properties = (vk::get-physical-device-properties dev)
             do (flet ((prop (x)
                         (getf properties x)))
-                 (format t "apiVersion: ~d.~d.~d~%"
-                         (ldb (byte 12 22) (prop :api-version))
-                         (ldb (byte 11 11) (prop :api-version))
-                         (ldb (byte 12 0) (prop :api-version)))
+                 (format t "apiVersion: ~{~d.~d.~d~}~%"
+                         (vk:decode-version (prop :api-version)))
                  (format t "driverVersion: ~s~%" (prop :driver-version))
                  (format t "vendorId: #x~6,'0x~%" (prop :vendor-id))
                  (format t "deviceId: #x~6,'0x~%" (prop :device-id))
