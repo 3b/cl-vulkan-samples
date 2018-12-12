@@ -212,12 +212,12 @@
       (let ((qf (info :queue-families)))
         (unless qf
           (error "no queues specified?"))
-        (setf (info :graphics-queue
-                    (apply #'vk::get-device-queue ,var (getf qf :graphics))))
-        (setf (info :transfer-queue
-                    (apply #'vk::get-device-queue device (getf qf :transfer))))
-        (setf (info :present-queue
-                    (apply #'vk::get-device-queue device (getf qf :present)))))
+        (setf (info :graphics-queue)
+              (apply #'vk::get-device-queue ,var (getf qf :graphics)))
+        (setf (info :transfer-queue)
+              (apply #'vk::get-device-queue ,var (getf qf :transfer)))
+        (setf (info :present-queue)
+              (apply #'vk::get-device-queue ,var (getf qf :present))))
       ,@body)))
 
 (defun device ()
